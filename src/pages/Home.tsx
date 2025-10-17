@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 // Données des fonctionnalités
 const features = [
-  { title: "Performance", description: "Optimisé pour la vitesse et une expérience utilisateur fluide.", icon: "⚡" },
-  { title: "Modularité", description: "Composants réutilisables et faciles à intégrer.", icon: "🧩" },
+  { title: "Site/web/Mobile", description: "creation de site web et developpement des applications mobile et web .", icon: "🌐" },
+  { title: "Reseau ", description: " configuration des materiels reseaux  .", icon: "📡" },
   { title: "Design moderne", description: "Interface élégante avec animations subtiles.", icon: "🎨" },
 ];
 
@@ -103,7 +103,7 @@ const Home = () => {
           viewport={{ once: true }}
           className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-16"
         >
-          Fonctionnalités principales
+          Fonctions principales
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
