@@ -1,4 +1,4 @@
-
+// Services.jsx
 import {
   FaLaptopCode,
   FaMobileAlt,
@@ -43,26 +43,28 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="min-h-screen py-16 px-4 bg-background text-foreground">
-      <div className="container mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Nos Services</h1>
-        <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+    <section className="min-h-screen py-20 px-4 bg-[#f9fafb] text-gray-800">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900">
+          Nos Services
+        </h1>
+        <p className="text-lg text-gray-600 text-center mb-14 max-w-2xl mx-auto">
           Des solutions complètes pour accompagner votre croissance.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary transition-all hover:shadow-xl group duration-300"
+              className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="text-4xl text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-muted-foreground">{service.description}</p>
+              <p className="text-gray-600 leading-relaxed">{service.description}</p>
             </div>
           ))}
         </div>
