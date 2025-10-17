@@ -1,3 +1,51 @@
+<<<<<<< HEAD
+=======
+
+import {
+  FaLaptopCode,
+  FaMobileAlt,
+  FaLightbulb,
+  FaPaintBrush,
+  FaBullhorn,
+  FaTools,
+} from "react-icons/fa";
+
+import "../App.css";
+
+const services = [
+  {
+    title: "Développement Web's",
+    description: "Création de sites web modernes et performants adaptés à vos besoins.",
+    icon: <FaLaptopCode />,
+  },
+  {
+    title: "Applications Mobile",
+    description: "Développement d'applications natives et hybrides pour iOS et Android.",
+    icon: <FaMobileAlt />,
+  },
+  {
+    title: "Consulting IT",
+    description: "Conseil stratégique pour optimiser votre infrastructure technologique.",
+    icon: <FaLightbulb />,
+  },
+  {
+    title: "Design UX/UI",
+    description: "Création d'expériences utilisateur intuitives et engageantes.",
+    icon: <FaPaintBrush />,
+  },
+  {
+    title: "Marketing Digital",
+    description: "Stratégies marketing pour augmenter votre visibilité en ligne.",
+    icon: <FaBullhorn />,
+  },
+  {
+    title: "Support Technique",
+    description: "Assistance et maintenance pour garantir la continuité de vos services.",
+    icon: <FaTools />,
+  },
+];
+
+>>>>>>> 94a91554e4fabb3bc9f53ef7137338392db017cc
 const Services = () => {
   const services = [
     {

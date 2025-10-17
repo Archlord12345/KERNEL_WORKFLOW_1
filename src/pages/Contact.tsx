@@ -1,5 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 
+import "../App.css";
+
 const Contact = () => {
   return (
     <div className="min-h-screen py-16 px-4 relative overflow-hidden">

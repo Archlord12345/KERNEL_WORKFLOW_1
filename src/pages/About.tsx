@@ -1,3 +1,5 @@
+import "../App.css";
+
 const About = () => {
   return (
     <div className="min-h-screen py-16 px-4 relative overflow-hidden">
