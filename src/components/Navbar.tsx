@@ -32,7 +32,7 @@ const Navbar = () => {
             to="/"
             className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
           >
-            MonSite
+          KF
           </NavLink>
 
           {/* Desktop Navigation */}
