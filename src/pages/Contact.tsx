@@ -1,4 +1,10 @@
+import { createClient } from '@supabase/supabase-js';
 import { Mail, Phone, MapPin } from "lucide-react";
+
+/* Supabase client (accessible dans ce fichier) */
+const supabaseUrl = 'https://vxcwfigplayrlwbclwqg.supabase.co';
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Contact = () => {
   return (
