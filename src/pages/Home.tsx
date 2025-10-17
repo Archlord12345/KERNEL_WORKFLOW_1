@@ -32,7 +32,7 @@ const GitHubSymbol = ({ x, y, size, color, duration }) => (
 
 const Home = () => {
   return (
-    <div className="relative overflow-hidden min-h-screen bg-blue-600">
+  <div className="relative overflow-hidden min-h-screen bg-red-500 text-white p-8">
       {/* Background symbols */}
       {Array.from({ length: 15 }).map((_, i) => (
         <GitHubSymbol
