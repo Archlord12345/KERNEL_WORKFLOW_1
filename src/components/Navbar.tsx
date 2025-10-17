@@ -14,6 +14,8 @@ const Navbar = () => {
     { name: "FAQ", path: "/faq" },
     { name: "Tarifs", path: "/pricing" },
     { name: "Contact", path: "/contact" },
+    { name: "Login", path: "/login" },
+    { name: "Admin", path: "/admin" },
   ];
 
   const getLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -32,7 +34,7 @@ const Navbar = () => {
             to="/"
             className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
           >
-            MonSite
+          KF
           </NavLink>
 
           {/* Desktop Navigation */}
