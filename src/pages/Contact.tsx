@@ -120,6 +120,12 @@ const Contact = () => {
               </button>
             </form>
           </div>
+          
+           <div className="bg-card rounded-xl p-8 border border-border">
+            <h2 className="text-2xl font-semibold mb-6">Temps de réponse</h2> <br/>
+            <p>Nous nous efforçons de répondre à tous les messages dans les 24 heures. Pour les demandes urgentes, n'hésitez pas à le préciser dans votre message.</p>
+           
+          </div>
         </div>
       </div>
     </div>
