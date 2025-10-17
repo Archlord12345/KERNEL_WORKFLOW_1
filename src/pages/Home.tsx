@@ -1,8 +1,6 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
 import logo from "../../images/logo_sans-fond.png";
-
-ss
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen overflow-hidden bg-background">
