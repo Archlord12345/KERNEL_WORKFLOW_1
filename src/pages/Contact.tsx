@@ -20,7 +20,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">contact@monsite.com</p>
+                  <p className="text-muted-foreground">ravel.nghomsi@facsciences-uy1.cm</p>
                 </div>
               </div>
 
@@ -30,7 +30,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Téléphone</h3>
-                  <p className="text-muted-foreground">+33 1 23 45 67 89</p>
+                  <p className="text-muted-foreground">+237 6 57 63 56 44</p>
                 </div>
               </div>
 
@@ -41,9 +41,10 @@ const Contact = () => {
                 <div>
                   <h3 className="font-semibold mb-1">Adresse</h3>
                   <p className="text-muted-foreground">
-                    123 Avenue des Champs-Élysées
+                    Faculté des Sciences de l'Université de Yaoundé I
                     <br />
-                    75008 Paris, France
+                    BP 812 Yaoundé, Cameroun
+                    <br />
                   </p>
                 </div>
               </div>
