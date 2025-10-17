@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-import { Scene3D } from "@/components/3d/Scene3D";
+import { Scene3D } from "../components/3d/Scene3D";
 import { Sparkles } from "lucide-react";
-
-const Home = () => {
-  return (
-    <div className="min-h-screen overflow-hidden">
-=======
 import { motion } from "framer-motion";
+
 
 import "../App.css";
 
@@ -40,7 +35,7 @@ const GitHubSymbol = ({ x, y, size, color, duration }) => (
 
 const Home = () => {
   return (
-  <div className="relative overflow-hidden min-h-screen bg-red-500 text-white p-8">
+    <div className="relative overflow-hidden min-h-screen bg-red-500 text-white p-8">
       {/* Background symbols */}
       {Array.from({ length: 15 }).map((_, i) => (
         <GitHubSymbol
@@ -53,7 +48,6 @@ const Home = () => {
         />
       ))}
 
->>>>>>> 94a91554e4fabb3bc9f53ef7137338392db017cc
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-background via-muted to-background">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
@@ -82,7 +76,6 @@ const Home = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* 3D Section */}
       <section className="py-16 px-4 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto">
@@ -97,38 +90,6 @@ const Home = () => {
           <div className="max-w-4xl mx-auto animate-scale-in">
             <Scene3D />
           </div>
-=======
-      {/* Collectif + Services Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-6xl mx-auto">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
-          className="text-base sm:text-lg md:text-xl text-white mx-auto max-w-3xl"
-        >
-          Collectif étudiant passionné par l'open source et Linux. Nous développons des solutions innovantes et partageons nos connaissances avec la communauté.
-        </motion.p>
-
-        {/* Services Section: 3 cartes en haut, 2 cartes centrées en bas */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05, rotate: 2 }}
-              className={`${service.color} p-6 rounded-xl text-white font-semibold text-center shadow-lg cursor-pointer transition-all max-w-xs w-full ${
-                // Centrer les 2 dernières cartes sur la ligne du bas
-                index >= 3 ? "md:col-start-2" : ""
-              }`}
-            >
-              {service.name}
-            </motion.div>
-          ))}
->>>>>>> 94a91554e4fabb3bc9f53ef7137338392db017cc
         </div>
       </section>
 

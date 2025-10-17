@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 
 import {
   FaLaptopCode,
@@ -45,7 +44,6 @@ const services = [
   },
 ];
 
->>>>>>> 94a91554e4fabb3bc9f53ef7137338392db017cc
 const Services = () => {
   const services = [
     {

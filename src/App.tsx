@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-import { TooltipProvider } from "@/components/ui/tooltip";
-=======
+
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as Sonner } from "./components/ui/sonner";
 import { TooltipProvider } from "./components/ui/tooltip";
-import './App.css';  // Importer les styles globaux
->>>>>>> 94a91554e4fabb3bc9f53ef7137338392db017cc
+import './App.css';  
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
