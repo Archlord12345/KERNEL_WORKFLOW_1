@@ -5,7 +5,7 @@ const Home = () => {
       <section className="py-20 px-4 bg-gradient-to-b from-background to-muted">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Bienvenue sur MonSite
+            Bienvenue sur KERNEL FORGE
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Un template moderne et élégant pour votre prochain projet React
