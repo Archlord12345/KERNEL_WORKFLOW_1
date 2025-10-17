@@ -1,5 +1,11 @@
 import React from "react";
 
+/* Supabase client (accessible dans ce fichier) */
+import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = 'https://vxcwfigplayrlwbclwqg.supabase.co';
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const Admin = () => {
   return (
     <div className="min-h-screen py-16 px-4">
