@@ -8,6 +8,15 @@ const Home = () => {
       <section className="relative py-20 px-4 bg-gradient-to-br from-background via-muted to-background">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
         <div className="container mx-auto text-center relative z-10">
+          <div className="animate-fade-in-down mb-4" style={{ animationDelay: "0s", animationFillMode: "both" }}>
+            <img
+              src="./images/logo_sans-fond.png"
+              alt="Logo Kernel Forge"
+              className="mx-auto w-20 h-auto md:w-28"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
           <div className="animate-fade-in-down">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-glow">
               Bienvenue chez KERNEL FORGE
