@@ -1,102 +1,127 @@
 import { motion } from "framer-motion";
 
+// Données des fonctionnalités
 const features = [
-  {
-    title: "Performance",
-    description: "Optimisé pour la vitesse et une expérience utilisateur fluide.",
-    icon: "⚡",
-  },
-  {
-    title: "Modularité",
-    description: "Composants réutilisables et faciles à intégrer dans vos projets.",
-    icon: "🧩",
-  },
-  {
-    title: "Design moderne",
-    description: "Interface élégante avec Tailwind CSS et animations subtiles.",
-    icon: "🎨",
-  },
+  { title: "Performance", description: "Optimisé pour la vitesse et une expérience utilisateur fluide.", icon: "⚡" },
+  { title: "Modularité", description: "Composants réutilisables et faciles à intégrer.", icon: "🧩" },
+  { title: "Design moderne", description: "Interface élégante avec animations subtiles.", icon: "🎨" },
 ];
+
+// Données des services
+const services = [
+  { name: "Nos services", color: "bg-blue-500" },
+  { name: "Nos logiciels", color: "bg-green-500" },
+  { name: "Commentaires", color: "bg-yellow-400" },
+  { name: "Minecraft Online", color: "bg-purple-500" },
+  { name: "Administration", color: "bg-red-500" },
+];
+
+// GitHub floating symbols
+const GitHubSymbol = ({ x, y, size, color, duration }) => (
+  <motion.div
+    className={`absolute text-${color} text-xl`}
+    style={{ left: x, top: y, fontSize: size }}
+    animate={{ y: [y, y + 50, y] }}
+    transition={{ repeat: Infinity, duration, ease: "easeInOut" }}
+  >
+    🐱
+  </motion.div>
+);
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="relative overflow-hidden min-h-screen bg-blue-600">
+      {/* Background symbols */}
+      {Array.from({ length: 15 }).map((_, i) => (
+        <GitHubSymbol
+          key={i}
+          x={`${Math.random() * 100}%`}
+          y={`${Math.random() * 100}%`}
+          size={`${12 + Math.random() * 16}px`}
+          color={["white", "gray-200", "blue-300", "white"][i % 4]}
+          duration={3 + Math.random() * 3}
+        />
+      ))}
+
       {/* Hero Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-background to-muted">
-        <div className="container mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-6xl font-extrabold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
-          >
-            Bienvenue sur KERNEL FORGE
-          </motion.h1>
+      <section className="py-20 sm:py-24 px-4 relative z-10 text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-white"
+        >
+          Bienvenue sur KERNEL FORGE
+        </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto"
-          >
-            Un template moderne et élégant pour booster vos projets React avec style et performance.
-          </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="text-base sm:text-lg md:text-xl text-white mb-10 max-w-2xl mx-auto"
+        >
+          Un template moderne et élégant pour booster vos projets React avec style et performance.
+        </motion.p>
+      </section>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="flex flex-wrap justify-center gap-5"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59,130,246,0.3)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium transition-all"
+      {/* Collectif + Services Section */}
+      <section className="py-16 px-4 relative z-10 text-center">
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto"
+        >
+          Collectif étudiant passionné par l'open source et Linux. Nous développons des solutions innovantes et partageons nos connaissances avec la communauté.
+        </motion.p>
+
+        {/* Services Section */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, rotate: 2 }}
+              className={`${service.color} p-6 rounded-xl text-white font-semibold text-center shadow-lg cursor-pointer transition-all`}
             >
-              Commencer
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 25px rgba(59,130,246,0.2)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-medium hover:bg-primary hover:text-primary-foreground transition-all"
-            >
-              En savoir plus
-            </motion.button>
-          </motion.div>
+              {service.name}
+            </motion.div>
+          ))}
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold text-center mb-16"
-          >
-            Fonctionnalités principales
-          </motion.h2>
+      <section className="py-20 px-4 relative z-10 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-16"
+        >
+          Fonctionnalités principales
+        </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(0,0,0,0.1)" }}
-                className="p-8 bg-card rounded-2xl border border-border text-center transition-all"
-              >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, boxShadow: "0 15px 30px rgba(0,0,0,0.1)" }}
+              className="p-6 sm:p-8 bg-white bg-opacity-20 rounded-2xl border border-white/20 text-center transition-all text-white"
+            >
+              <div className="text-3xl sm:text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-lg sm:text-xl md:text-xl font-semibold mb-3">{feature.title}</h3>
+              <p className="text-sm sm:text-base md:text-base">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
       </section>
     </div>
