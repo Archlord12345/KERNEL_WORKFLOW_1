@@ -1,7 +1,7 @@
 const Services = () => {
   const services = [
     {
-      title: "Développement We",
+      title: "Développement d'appli Web",
       description: "Création de sites web modernes et performants adaptés à vos besoins",
     },
     {
