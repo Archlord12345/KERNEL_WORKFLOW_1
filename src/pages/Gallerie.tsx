@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const FAQ = () => {
+const Gallerie = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
@@ -45,7 +45,7 @@ const FAQ = () => {
       <div className="container mx-auto max-w-3xl relative z-10">
         <div className="animate-fade-in-down">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent">
-            FAQ
+            Gallerie
           </h1>
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
@@ -85,4 +85,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Gallerie;

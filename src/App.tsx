@@ -9,7 +9,7 @@ import Equipe from "./pages/Equipe";
 import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Blog from "./pages/Blog";
-import FAQ from "./pages/FAQ";
+import Gallerie from "./pages/Gallerie";
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -39,7 +39,7 @@ const App = () => (
               }
             />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="/gallerie" element={<Gallerie />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
