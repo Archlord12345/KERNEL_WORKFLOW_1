@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-import './styles/App.css';  // Vérifier que ce chemin correspond à l'emplacement du fichier
+import './styles/App.css';  // Importer les styles globaux
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Failed to find the root element');
