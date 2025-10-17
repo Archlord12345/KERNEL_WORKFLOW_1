@@ -7,6 +7,7 @@ interface AuthContextValue {
   isAdmin: boolean;
   login: (email: string, password: string) => Promise<{ ok: boolean; message?: string }>;
   loginWithOtp: (email: string) => Promise<{ ok: boolean; message?: string }>;
+  loginEmailOnly: (email: string) => Promise<{ ok: boolean; message?: string }>;
   logout: () => Promise<void>;
 }
 
@@ -17,23 +18,33 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
   useEffect(() => {
-    // Get initial session
+    // Restore local email-only session if present
+    const localAdminEmail = localStorage.getItem("local_admin_email");
+    if (localAdminEmail) {
+      setIsAuthenticated(true);
+      setIsAdmin(true);
+    }
+
+    // Get initial Supabase session (optional)
     supabase.auth.getSession().then(async ({ data }) => {
       const session = data.session;
-      setIsAuthenticated(!!session);
       if (session?.user) {
+        setIsAuthenticated(true);
         await refreshAdminFlag(session.user.id);
-      } else {
-        setIsAdmin(false);
       }
     });
     // Subscribe to auth state changes
     const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAuthenticated(!!session);
       if (session?.user) {
+        setIsAuthenticated(true);
         refreshAdminFlag(session.user.id);
       } else {
-        setIsAdmin(false);
+        // If no Supabase session, keep local session if exists
+        const localEmail = localStorage.getItem("local_admin_email");
+        if (!localEmail) {
+          setIsAuthenticated(false);
+          setIsAdmin(false);
+        }
       }
     });
     return () => {
@@ -65,6 +76,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const logout = async () => {
     await supabase.auth.signOut();
+    localStorage.removeItem("local_admin_email");
+    setIsAuthenticated(false);
+    setIsAdmin(false);
   };
 
   const loginWithOtp = async (email: string) => {
@@ -75,7 +89,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return { ok: true };
   };
 
-  const value = useMemo(() => ({ isAuthenticated, isAdmin, login, loginWithOtp, logout }), [isAuthenticated, isAdmin]);
+  const loginEmailOnly = async (email: string) => {
+    if (!email) return { ok: false, message: "Email requis" };
+    // Check via RPC to avoid RLS issues
+    const { data, error } = await supabase.rpc("is_admin_email", { p_email: email });
+    if (error) return { ok: false, message: error.message };
+    if (!data) return { ok: false, message: "Accès admin refusé" };
+    // Set local session
+    localStorage.setItem("local_admin_email", email);
+    setIsAuthenticated(true);
+    setIsAdmin(true);
+    return { ok: true };
+  };
+
+  const value = useMemo(() => ({ isAuthenticated, isAdmin, login, loginWithOtp, loginEmailOnly, logout }), [isAuthenticated, isAdmin]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
