@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 
+/* Supabase client (accessible dans ce fichier) */
+import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = 'https://vxcwfigplayrlwbclwqg.supabase.co';
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
