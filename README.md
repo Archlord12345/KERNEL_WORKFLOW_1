@@ -1,1 +1,0 @@
-Bien venu sur le nouveau site du groupe KERNEL FORGE
