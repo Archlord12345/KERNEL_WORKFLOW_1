@@ -44,23 +44,25 @@ const services = [
 const Services = () => {
   return (
     <section className="relative min-h-screen py-20 px-4 bg-blue-50 text-gray-800 overflow-hidden">
-      {/* BACKGROUND SVG DECORATION */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
-        <svg
-          className="w-full h-full object-cover"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#dbeafe"
-            fillOpacity="1"
-            d="M0,160L60,160C120,160,240,160,360,170.7C480,181,600,203,720,192C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
+      {/* Animated Bubble Background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="bubble"
+            style={{
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${5 + Math.random() * 10}s`,
+              animationDelay: `${Math.random() * 5}s`,
+              width: `${10 + Math.random() * 40}px`,
+              height: `${10 + Math.random() * 40}px`,
+              opacity: `${0.2 + Math.random() * 0.4}`,
+            }}
+          ></div>
+        ))}
       </div>
 
-      {/* CONTENT */}
+      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-blue-700">
           Nos Services
@@ -86,6 +88,31 @@ const Services = () => {
           ))}
         </div>
       </div>
+
+      {/* Bubble animation styles */}
+      <style jsx>{`
+        .bubble {
+          position: absolute;
+          bottom: -50px;
+          background: rgba(59, 130, 246, 0.3); /* blue-500 with opacity */
+          border-radius: 50%;
+          animation-name: floatUp;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+        }
+
+        @keyframes floatUp {
+          0% {
+            transform: translateY(0) scale(1);
+          }
+          50% {
+            transform: translateY(-50vh) scale(1.1);
+          }
+          100% {
+            transform: translateY(-100vh) scale(1);
+          }
+        }
+      `}</style>
     </section>
   );
 };
