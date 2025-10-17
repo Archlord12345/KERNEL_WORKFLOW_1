@@ -1,19 +1,13 @@
 import React, { useState } from "react";
 
-/* Supabase client (accessible dans ce fichier) */
-import { createClient } from '@supabase/supabase-js';
-const supabaseUrl = 'https://vxcwfigplayrlwbclwqg.supabase.co';
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    // placeholder: ici vous pouvez appeler votre API d'authentification
-    alert(`Tentative de connexion avec ${email}`);
+    // Simple form submission without Supabase
+    console.log("Form submitted:", email);
   }
 
   return (
