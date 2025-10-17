@@ -7,6 +7,10 @@ import {
   FaBullhorn,
   FaTools,
 } from "react-icons/fa";
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+
+import { useCallback } from "react";
 
 const services = [
   {
@@ -42,25 +46,65 @@ const services = [
 ];
 
 const Services = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadFull(engine);
+  }, []);
+
   return (
     <section className="relative min-h-screen py-20 px-4 bg-blue-50 text-gray-800 overflow-hidden">
-      {/* Animated Bubble Background */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            className="bubble"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${5 + Math.random() * 10}s`,
-              animationDelay: `${Math.random() * 5}s`,
-              width: `${10 + Math.random() * 40}px`,
-              height: `${10 + Math.random() * 40}px`,
-              opacity: `${0.2 + Math.random() * 0.4}`,
-            }}
-          ></div>
-        ))}
-      </div>
+      {/* Particles background */}
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        className="absolute inset-0 z-0"
+        options={{
+          fullScreen: false,
+          background: {
+            color: {
+              value: "#f0f7ff",
+            },
+          },
+          particles: {
+            number: {
+              value: 60,
+              density: {
+                enable: true,
+                value_area: 800,
+              },
+            },
+            color: {
+              value: "#3b82f6", // blue-500
+            },
+            links: {
+              enable: true,
+              distance: 150,
+              color: "#3b82f6",
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 1,
+              outModes: "bounce",
+            },
+            size: {
+              value: 3,
+            },
+            opacity: {
+              value: 0.5,
+            },
+          },
+          interactivity: {
+            events: {
+              onHover: {
+                enable: true,
+                mode: "grab",
+              },
+              resize: true,
+            },
+          },
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -88,31 +132,6 @@ const Services = () => {
           ))}
         </div>
       </div>
-
-      {/* Bubble animation styles */}
-      <style jsx>{`
-        .bubble {
-          position: absolute;
-          bottom: -50px;
-          background: rgba(59, 130, 246, 0.3); /* blue-500 with opacity */
-          border-radius: 50%;
-          animation-name: floatUp;
-          animation-timing-function: ease-in-out;
-          animation-iteration-count: infinite;
-        }
-
-        @keyframes floatUp {
-          0% {
-            transform: translateY(0) scale(1);
-          }
-          50% {
-            transform: translateY(-50vh) scale(1.1);
-          }
-          100% {
-            transform: translateY(-100vh) scale(1);
-          }
-        }
-      `}</style>
     </section>
   );
 };
