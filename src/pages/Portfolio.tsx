@@ -1,6 +1,6 @@
-const Portfolio = () => {
-
 import "../App.css";
+
+const Portfolio = () => {
   const projects = [
     {
       title: "Projet E-commerce",

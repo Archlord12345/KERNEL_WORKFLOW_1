@@ -1,6 +1,6 @@
-const Blog = () => {
-
 import "../App.css";
+
+const Blog = () => {
   const articles = [
     {
       title: "Les tendances du web design en 2024",
