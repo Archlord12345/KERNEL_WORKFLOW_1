@@ -1,51 +1,71 @@
-import { FaCode, FaMobileAlt, FaLightbulb, FaPaintBrush, FaBullhorn, FaLifeRing } from 'react-icons/fa';
+import {
+  FaCode,
+  FaMobileAlt,
+  FaLightbulb,
+  FaPaintBrush,
+  FaBullhorn,
+  FaLifeRing,
+} from "react-icons/fa";
 
 const Services = () => {
   const services = [
     {
-      icon: <FaCode className="text-3xl text-primary" />,
+      icon: <FaCode className="text-3xl text-white" />,
       title: "Développement Web",
-      description: "Création de sites web modernes, rapides et adaptés à tous les supports.",
+      description:
+        "Création de sites web modernes, rapides et adaptés à tous les supports.",
+      bg: "https://images.unsplash.com/photo-1502880195258-849b2010d8c5", // dev web
     },
     {
-      icon: <FaMobileAlt className="text-3xl text-primary" />,
+      icon: <FaMobileAlt className="text-3xl text-white" />,
       title: "Applications Mobiles",
-      description: "Applications natives et hybrides pour Android et iOS avec design fluide.",
+      description:
+        "Applications natives et hybrides pour Android et iOS avec design fluide.",
+      bg: "https://images.unsplash.com/photo-1558655146-d09347e92766", // mobile
     },
     {
-      icon: <FaLightbulb className="text-3xl text-primary" />,
+      icon: <FaLightbulb className="text-3xl text-white" />,
       title: "Consulting IT",
-      description: "Stratégies technologiques pour optimiser vos processus métiers.",
+      description:
+        "Stratégies technologiques pour optimiser vos processus métiers.",
+      bg: "https://images.unsplash.com/photo-1581090700227-1e8e7b36dd8e", // consulting
     },
     {
-      icon: <FaPaintBrush className="text-3xl text-primary" />,
+      icon: <FaPaintBrush className="text-3xl text-white" />,
       title: "Design UX/UI",
-      description: "Interfaces intuitives centrées sur l’utilisateur pour une meilleure expérience.",
+      description:
+        "Interfaces intuitives centrées sur l’utilisateur pour une meilleure expérience.",
+      bg: "https://images.unsplash.com/photo-1603570419945-34e2ab3a75f3", // design
     },
     {
-      icon: <FaBullhorn className="text-3xl text-primary" />,
+      icon: <FaBullhorn className="text-3xl text-white" />,
       title: "Marketing Digital",
-      description: "Campagnes ciblées et gestion de la visibilité sur les canaux digitaux.",
+      description:
+        "Campagnes ciblées et gestion de la visibilité sur les canaux digitaux.",
+      bg: "https://images.unsplash.com/photo-1560264280-88b68371db39", // marketing
     },
     {
-      icon: <FaLifeRing className="text-3xl text-primary" />,
+      icon: <FaLifeRing className="text-3xl text-white" />,
       title: "Support Technique",
-      description: "Maintenance proactive et assistance pour garantir la fiabilité de vos outils.",
+      description:
+        "Maintenance proactive et assistance pour garantir la fiabilité de vos outils.",
+      bg: "https://images.unsplash.com/photo-1581091870622-4c4e0c3c4a43", // support
     },
   ];
 
   return (
     <section
       id="services"
-      className="min-h-screen py-20 px-6 md:px-12 bg-background relative overflow-hidden"
+      className="min-h-screen py-20 px-6 md:px-12 bg-cover bg-center relative overflow-hidden"
+      style={{
+        backgroundImage:
+          "url('https://www.transparenttextures.com/patterns/white-wall-3.png')",
+      }}
       aria-label="Liste des services proposés"
     >
-      {/* Arrière-plan stylisé */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-background pointer-events-none"></div>
-      <div className="absolute top-24 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-24 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      {/* Arrière-plan stylisé en dégradé */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background pointer-events-none z-0"></div>
 
-      {/* Contenu principal */}
       <div className="container mx-auto relative z-10">
         <header className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-fade-in-down">
@@ -60,20 +80,25 @@ const Services = () => {
           {services.map((service, index) => (
             <article
               key={index}
-              className="bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border hover:border-primary transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group hover:scale-105 transform animate-scale-in"
+              className="relative rounded-xl p-6 border border-border transition-all duration-300 hover:scale-[1.03] shadow-md group overflow-hidden"
               style={{
-                animationDelay: `${index * 0.1}s`,
-                animationFillMode: "both",
+                backgroundImage: `url(${service.bg})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
               aria-label={`Service : ${service.title}`}
             >
-              <div className="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-lg mb-4 group-hover:rotate-12 transition-transform">
-                {service.icon}
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition duration-300"></div>
+
+              <div className="relative z-10 flex flex-col items-start">
+                <div className="w-14 h-14 flex items-center justify-center bg-primary rounded-full mb-4">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-white/90">{service.description}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">{service.description}</p>
             </article>
           ))}
         </div>
