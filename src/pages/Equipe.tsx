@@ -1,4 +1,4 @@
-const Portfolio = () => {
+const Equipe = () => {
   const projects = [
     {
       title: "Projet E-commerce",
@@ -39,13 +39,11 @@ const Portfolio = () => {
       <div className="container mx-auto relative z-10">
         <div className="animate-fade-in-down">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Portfolio
+            Équipe
           </h1>
         </div>
         <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
-          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Découvrez nos réalisations récentes
-          </p>
+          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">Découvrez notre équipe</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -71,4 +69,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Equipe;
