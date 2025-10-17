@@ -1,7 +1,7 @@
 const Services = () => {
   const services = [
     {
-      title: "Développement d'appli Web",
+      title: "Développement Web",
       description: "Création de sites web modernes et performants adaptés à vos besoins",
     },
     {
@@ -39,10 +39,11 @@ const Services = () => {
             <div
               key={index}
               className="bg-card rounded-xl p-6 border border-border hover:border-primary transition-all hover:shadow-lg group"
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg mb-4 group-hover:scale-110 transition-transform"></div>
+             >
+              <div className="text-3xl text-primary mb-4">{service.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-muted-foreground">{service.description}</p>
+             <p className="text-muted-foreground">{service.description}</p>
+
             </div>
           ))}
         </div>
