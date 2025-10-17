@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen py-16 px-4">
       <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Contact</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Contactez nous</h1>
         <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Nous sommes à votre écoute
+          Une question, une suggestion, ou envie de collaborer avec KERNEL FORGE ? N'hésitez pas à nous écrire, nous serons ravis d'échanger avec vous !
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
