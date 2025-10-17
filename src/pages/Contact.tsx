@@ -128,15 +128,17 @@ const Contact = () => {
           </div>
 
           <div className="bg-card rounded-xl p-8 border border-border">
-            <h2 className="text-2xl font-semibold mb-6">Temps de réponse</h2> <br/>
-            <p>Nous nous efforçons de répondre à tous les messages dans les 24 heures. Pour les demandes urgentes, n'hésitez pas à le préciser dans votre message.</p>
+            <h2 className="text-2xl font-semibold mb-6">Qui sommes-nous ?</h2> <br/>
+            <p>KERNEL FORGE est un collectif d'étudiants en informatique unis par la passion du logiciel libre et des technologies Linux. Nous développons des projets innovants et partageons nos connaissances avec la communauté.</p>
            
           </div>
-          <h2 className="text-2xl font-semibold mb-6">Nos domaines</h2>
-          <p>Développement logiciel</p>
-          <p>Administration système Linux</p>
-          <p>Hébergement web</p>
-          <p>Conseil et formation</p>
+          <div className="bg-card rounded-xl p-8 border border-border">
+            <h2 className="text-2xl font-semibold mb-6">Nos domaines</h2>
+            <p>. Développement logiciel</p>
+            <p>. Administration système Linux</p>
+            <p>. Hébergement web</p>
+            <p>. Conseil et formation</p>
+          </div>
         </div>
       </div>
     </div>
