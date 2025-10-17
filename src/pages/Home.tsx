@@ -1,5 +1,6 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
+import logo from "../../images/logo_sans-fond.png";
 
 const Home: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto text-center relative z-10">
           <div className="animate-fade-in-down mb-4" style={{ animationDelay: "0s", animationFillMode: "both" }}>
             <img
-              src="./images/logo_sans-fond.png"
+              src={logo}
               alt="Logo Kernel Forge"
               className="mx-auto w-20 h-auto md:w-28"
               loading="lazy"
