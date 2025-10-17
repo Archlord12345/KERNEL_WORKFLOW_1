@@ -14,6 +14,8 @@ const Navbar = () => {
     { name: "FAQ", path: "/faq" },
     { name: "Tarifs", path: "/pricing" },
     { name: "Contact", path: "/contact" },
+    { name: "Login", path: "/login" },
+    { name: "Admin", path: "/admin" },
   ];
 
   const getLinkClass = ({ isActive }: { isActive: boolean }) =>
