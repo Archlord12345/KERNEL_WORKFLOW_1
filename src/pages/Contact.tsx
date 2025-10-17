@@ -2,55 +2,64 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Contactez nous</h1>
-        <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Une question, une suggestion, ou envie de collaborer avec KERNEL FORGE ? N'hésitez pas à nous écrire, nous serons ravis d'échanger avec vous !
-        </p>
+    <div className="min-h-screen py-16 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-primary/5 to-background"></div>
+      <div className="absolute top-40 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }}></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="animate-fade-in-down">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Contact
+          </h1>
+        </div>
+        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Nous sommes à votre écoute
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Info */}
-          <div>
+          <div className="animate-fade-in-up" style={{ animationDelay: "0.3s", animationFillMode: "both" }}>
             <h2 className="text-2xl font-semibold mb-6">Nos coordonnées</h2>
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-muted-foreground">ravel.nghomsi@facsciences-uy1.cm</p>
+                  <h3 className="font-semibold mb-1 group-hover:text-primary transition-colors">Email</h3>
+                  <p className="text-muted-foreground">contact@monsite.com</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-secondary/20 transition-colors group-hover:scale-110 transition-transform">
+                  <Phone className="w-6 h-6 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Téléphone</h3>
-                  <p className="text-muted-foreground">+237 6 57 63 56 44</p>
+                  <h3 className="font-semibold mb-1 group-hover:text-secondary transition-colors">Téléphone</h3>
+                  <p className="text-muted-foreground">+33 1 23 45 67 89</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-primary" />
+              <div className="flex items-start gap-4 group">
+                <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors group-hover:scale-110 transition-transform">
+                  <MapPin className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1">Adresse</h3>
+                  <h3 className="font-semibold mb-1 group-hover:text-accent transition-colors">Adresse</h3>
                   <p className="text-muted-foreground">
-                    Faculté des Sciences de l'Université de Yaoundé I
+                    123 Avenue des Champs-Élysées
                     <br />
-                    BP 812 Yaoundé, Cameroun
-                    <br />
+                    75008 Paris, France
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl">
+            <div className="mt-8 p-6 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-xl animate-glow hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] transition-all">
               <h3 className="font-semibold mb-2">Horaires d'ouverture</h3>
               <p className="text-muted-foreground text-sm">
                 Lundi - Vendredi : 9h00 - 18h00
@@ -61,7 +70,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card rounded-xl p-8 border border-border">
+          <div className="bg-card/80 backdrop-blur-sm rounded-xl p-8 border border-border animate-fade-in-up hover:shadow-[0_0_30px_hsl(var(--secondary)/0.2)] transition-all" style={{ animationDelay: "0.5s", animationFillMode: "both" }}>
             <h2 className="text-2xl font-semibold mb-6">Envoyez-nous un message</h2>
             <form className="space-y-4">
               <div>
@@ -114,30 +123,11 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-medium"
+                className="w-full py-3 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all font-medium transform hover:scale-105"
               >
                 Envoyer le message
               </button>
             </form>
-          </div>
-          
-           <div className="bg-card rounded-xl p-8 border border-border">
-            <h2 className="text-2xl font-semibold mb-6">Temps de réponse</h2> <br/>
-            <p>Nous nous efforçons de répondre à tous les messages dans les 24 heures. Pour les demandes urgentes, n'hésitez pas à le préciser dans votre message.</p>
-           
-          </div>
-
-          <div className="bg-card rounded-xl p-8 border border-border">
-            <h2 className="text-2xl font-semibold mb-6">Qui sommes-nous ?</h2> <br/>
-            <p>KERNEL FORGE est un collectif d'étudiants en informatique unis par la passion du logiciel libre et des technologies Linux. Nous développons des projets innovants et partageons nos connaissances avec la communauté.</p>
-           
-          </div>
-          <div className="bg-card rounded-xl p-8 border border-border">
-            <h2 className="text-2xl font-semibold mb-6">Nos domaines</h2>
-            <p>. Développement logiciel</p>
-            <p>. Administration système Linux</p>
-            <p>. Hébergement web</p>
-            <p>. Conseil et formation</p>
           </div>
         </div>
       </div>

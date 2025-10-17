@@ -38,21 +38,34 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="container mx-auto max-w-3xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">FAQ</h1>
-        <p className="text-xl text-muted-foreground text-center mb-12">
-          Questions fréquemment posées
-        </p>
+    <div className="min-h-screen py-16 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-background to-primary/5"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float"></div>
+      
+      <div className="container mx-auto max-w-3xl relative z-10">
+        <div className="animate-fade-in-down">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent">
+            FAQ
+          </h1>
+        </div>
+        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+          <p className="text-xl text-muted-foreground text-center mb-12">
+            Questions fréquemment posées
+          </p>
+        </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="bg-card rounded-xl border border-border overflow-hidden">
+            <div 
+              key={index} 
+              className="bg-card/80 backdrop-blur-sm rounded-xl border border-border overflow-hidden animate-fade-in-up hover:shadow-[0_0_20px_hsl(var(--primary)/0.15)] transition-all"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "both" }}
+            >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full p-6 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
+                className="w-full p-6 flex items-center justify-between text-left hover:bg-muted/50 transition-colors group"
               >
-                <h3 className="text-lg font-semibold pr-4">{faq.question}</h3>
+                <h3 className="text-lg font-semibold pr-4 group-hover:text-primary transition-colors">{faq.question}</h3>
                 <ChevronDown
                   className={`w-5 h-5 text-primary transition-transform flex-shrink-0 ${
                     openIndex === index ? "rotate-180" : ""
@@ -60,7 +73,7 @@ const FAQ = () => {
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-6 animate-fade-in">
                   <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
                 </div>
               )}

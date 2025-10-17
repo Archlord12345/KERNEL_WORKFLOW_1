@@ -1,92 +1,64 @@
-
-import {
-  FaLaptopCode,
-  FaMobileAlt,
-  FaLightbulb,
-  FaPaintBrush,
-  FaBullhorn,
-  FaTools,
-} from "react-icons/fa";
-
-const services = [
-  {
-    title: "Développement Web",
-    description: "Création de sites web modernes et performants adaptés à vos besoins.",
-    icon: <FaLaptopCode />,
-  },
-  {
-    title: "Applications Mobile",
-    description: "Développement d'applications natives et hybrides pour iOS et Android.",
-    icon: <FaMobileAlt />,
-  },
-  {
-    title: "Consulting IT",
-    description: "Conseil stratégique pour optimiser votre infrastructure technologique.",
-    icon: <FaLightbulb />,
-  },
-  {
-    title: "Design UX/UI",
-    description: "Création d'expériences utilisateur intuitives et engageantes.",
-    icon: <FaPaintBrush />,
-  },
-  {
-    title: "Marketing Digital",
-    description: "Stratégies marketing pour augmenter votre visibilité en ligne.",
-    icon: <FaBullhorn />,
-  },
-  {
-    title: "Support Technique",
-    description: "Assistance et maintenance pour garantir la continuité de vos services.",
-    icon: <FaTools />,
-  },
-];
-
 const Services = () => {
+  const services = [
+    {
+      title: "Développement Web",
+      description: "Création de sites web modernes et performants adaptés à vos besoins",
+    },
+    {
+      title: "Applications Mobile",
+      description: "Développement d'applications natives et hybrides pour iOS et Android",
+    },
+    {
+      title: "Consulting IT",
+      description: "Conseil stratégique pour optimiser votre infrastructure technologique",
+    },
+    {
+      title: "Design UX/UI",
+      description: "Création d'expériences utilisateur intuitives et engageantes",
+    },
+    {
+      title: "Marketing Digital",
+      description: "Stratégies marketing pour augmenter votre visibilité en ligne",
+    },
+    {
+      title: "Support Technique",
+      description: "Assistance et maintenance pour garantir la continuité de vos services",
+    },
+  ];
+
   return (
-    <section className="relative min-h-screen py-20 px-4 bg-blue-50 text-gray-800 overflow-hidden">
-      {/* BACKGROUND SVG DECORATION */}
-      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
-        <svg
-          className="w-full h-full object-cover"
-          viewBox="0 0 1440 320"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#dbeafe"
-            fillOpacity="1"
-            d="M0,160L60,160C120,160,240,160,360,170.7C480,181,600,203,720,192C840,181,960,139,1080,128C1200,117,1320,139,1380,149.3L1440,160L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
-      </div>
+    <div className="min-h-screen py-16 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-background"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      
+      <div className="container mx-auto relative z-10">
+        <div className="animate-fade-in-down">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            Nos Services
+          </h1>
+        </div>
+        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Des solutions complètes pour accompagner votre croissance
+          </p>
+        </div>
 
-      {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-blue-700">
-          Nos Services
-        </h1>
-        <p className="text-lg text-blue-900/80 text-center mb-14 max-w-2xl mx-auto">
-          Des solutions complètes pour accompagner votre croissance.
-        </p>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 border border-blue-200 shadow-md hover:shadow-xl transition-all duration-300 group hover:border-blue-500"
+              className="bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border hover:border-primary transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group animate-scale-in transform hover:scale-105"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "both" }}
             >
-              <div className="text-4xl text-blue-600 mb-4 group-hover:text-blue-700 transition-colors duration-300">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-800 group-hover:text-blue-700 transition-colors duration-300">
-                {service.title}
-              </h3>
-              <p className="text-blue-900/80">{service.description}</p>
+              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-lg mb-4 group-hover:rotate-12 transition-transform animate-glow"></div>
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+              <p className="text-muted-foreground">{service.description}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

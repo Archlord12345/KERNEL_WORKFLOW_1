@@ -39,18 +39,28 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen py-16 px-4">
-      <div className="container mx-auto max-w-6xl">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">Blog</h1>
-        <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-          Articles, tutoriels et actualités tech
-        </p>
+    <div className="min-h-screen py-16 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
+      <div className="absolute top-40 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+      
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="animate-fade-in-down">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
+            Blog
+          </h1>
+        </div>
+        <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
+          <p className="text-xl text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Articles, tutoriels et actualités tech
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {articles.map((article, index) => (
             <article
               key={index}
-              className="bg-card rounded-xl p-6 border border-border hover:border-primary transition-all hover:shadow-lg group cursor-pointer"
+              className="bg-card/80 backdrop-blur-sm rounded-xl p-6 border border-border hover:border-primary transition-all hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group cursor-pointer animate-fade-in-up transform hover:scale-[1.02]"
+              style={{ animationDelay: `${index * 0.1}s`, animationFillMode: "both" }}
             >
               <div className="flex items-center gap-3 mb-3 text-sm text-muted-foreground">
                 <span>{article.date}</span>
@@ -61,8 +71,9 @@ const Blog = () => {
                 {article.title}
               </h2>
               <p className="text-muted-foreground">{article.excerpt}</p>
-              <button className="mt-4 text-primary font-medium hover:underline">
-                Lire la suite →
+              <button className="mt-4 text-primary font-medium hover:underline inline-flex items-center gap-2">
+                Lire la suite
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </button>
             </article>
           ))}
