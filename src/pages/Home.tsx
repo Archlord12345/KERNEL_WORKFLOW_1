@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 // Données des fonctionnalités
 const features = [
-  { title: "Site/web/Mobile", description: "creation de site web et developpement des applications mobile et web .", icon: "🌐" },
-  { title: "Reseau ", description: " configuration des materiels reseaux  .", icon: "📡" },
+  { title: "Site/Web/Mobile", description: "Création de sites web et développement des applications mobile et web.", icon: "🌐" },
+  { title: "Réseau", description: "Configuration des matériels réseaux.", icon: "📡" },
   { title: "Design moderne", description: "Interface élégante avec animations subtiles.", icon: "🎨" },
 ];
 
@@ -76,8 +76,8 @@ const Home = () => {
           Collectif étudiant passionné par l'open source et Linux. Nous développons des solutions innovantes et partageons nos connaissances avec la communauté.
         </motion.p>
 
-        {/* Services Section */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center justify-center items-center">
+        {/* Services Section: 3 cartes en haut, 2 cartes centrées en bas */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -86,7 +86,10 @@ const Home = () => {
               transition={{ delay: index * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, rotate: 2 }}
-              className={`${service.color} p-6 rounded-xl text-white font-semibold text-center shadow-lg cursor-pointer transition-all max-w-xs w-full`}
+              className={`${service.color} p-6 rounded-xl text-white font-semibold text-center shadow-lg cursor-pointer transition-all max-w-xs w-full ${
+                // Centrer les 2 dernières cartes sur la ligne du bas
+                index >= 3 ? "md:col-start-2" : ""
+              }`}
             >
               {service.name}
             </motion.div>
