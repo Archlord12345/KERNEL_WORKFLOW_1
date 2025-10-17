@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/context/AuthContext";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, isAdmin, logout } = useAuth();
 
   const navItems = [
     { name: "Accueil", path: "/" },
@@ -14,6 +16,7 @@ const Navbar = () => {
     { name: "FAQ", path: "/faq" },
     { name: "Tarifs", path: "/pricing" },
     { name: "Contact", path: "/contact" },
+    { name: "Connexion", path: "/login" },
   ];
 
   const getLinkClass = ({ isActive }: { isActive: boolean }) =>
@@ -42,6 +45,20 @@ const Navbar = () => {
                 {item.name}
               </NavLink>
             ))}
+            {isAdmin && (
+              <NavLink to="/admin" className={getLinkClass}>
+                Admin
+              </NavLink>
+            )}
+            {!isAuthenticated ? (
+              <NavLink to="/login" className={getLinkClass}>
+                Connexion
+              </NavLink>
+            ) : (
+              <button onClick={logout} className={getLinkClass({ isActive: false })}>
+                Déconnexion
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,6 +84,31 @@ const Navbar = () => {
                 {item.name}
               </NavLink>
             ))}
+            {isAdmin && (
+              <NavLink
+                to="/admin"
+                className={getLinkClass}
+                onClick={() => setIsOpen(false)}
+              >
+                Admin
+              </NavLink>
+            )}
+            {!isAuthenticated ? (
+              <NavLink
+                to="/login"
+                className={getLinkClass}
+                onClick={() => setIsOpen(false)}
+              >
+                Connexion
+              </NavLink>
+            ) : (
+              <button
+                onClick={() => { logout(); setIsOpen(false); }}
+                className={getLinkClass({ isActive: false })}
+              >
+                Déconnexion
+              </button>
+            )}
           </div>
         )}
       </div>

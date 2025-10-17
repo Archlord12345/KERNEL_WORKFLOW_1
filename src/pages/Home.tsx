@@ -8,7 +8,6 @@ const Home: React.FC = () => {
       <section className="relative py-20 px-4 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         <div className="container mx-auto text-center relative z-10">
-<<<<<<< HEAD
           <div className="animate-fade-in-down mb-4" style={{ animationDelay: "0s", animationFillMode: "both" }}>
             <img
               src="./images/logo_sans-fond.png"
@@ -18,34 +17,16 @@ const Home: React.FC = () => {
               decoding="async"
             />
           </div>
-          <div className="animate-fade-in-down">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-glow">
-              Bienvenue chez KERNEL FORGE
-            </h1>
-          </div>
-          <div className="animate-fade-in-up" style={{ animationDelay: "0.2s", animationFillMode: "both" }}>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Transformons vos idées en réalité avec des solutions innovantes et créatives
-            </p>
-          </div>
-          <div className="flex gap-4 justify-center animate-bounce-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
-            <button className="group px-8 py-4 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-xl hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300 font-medium transform hover:scale-105">
-              <span className="flex items-center gap-2">
-                Commencer
-                <Sparkles className="w-5 h-5 group-hover:animate-spin" />
-              </span>
-=======
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-glow">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-blue-500 to-blue-500 bg-clip-text text-transparent animate-glow">
             Bienvenue chez KERNEL FORGE
           </h1>
           <p className="text-xl text-gray-600 mb-8 animate-fade-in-up max-w-2xl mx-auto">
             Transformons vos idées en réalité avec des solutions innovantes et créatives
           </p>
           <div className="flex gap-4 justify-center animate-bounce-in">
-            <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
+            <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-500 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center gap-2">
               Commencer
               <Sparkles className="w-5 h-5 group-hover:animate-spin" />
->>>>>>> 9e1ed32c06c34943cbea41a1f5a8f2a3ad1211ec
             </button>
             <button className="px-8 py-4 border-2 border-blue-500 text-blue-500 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300">
               En savoir plus
