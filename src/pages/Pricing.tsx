@@ -1,5 +1,7 @@
 import { Check } from "lucide-react";
 
+import "../App.css";
+
 const Pricing = () => {
   const plans = [
     {

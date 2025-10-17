@@ -1,4 +1,6 @@
 const Portfolio = () => {
+
+import "../App.css";
   const projects = [
     {
       title: "Projet E-commerce",

@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../App.css";
+
 const Admin = () => {
   return (
     <div className="min-h-screen py-16 px-4">

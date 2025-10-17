@@ -1,4 +1,6 @@
 const About = () => {
+
+import "../App.css";
   return (
     <div className="min-h-screen py-16 px-4">
       <div className="container mx-auto max-w-4xl">

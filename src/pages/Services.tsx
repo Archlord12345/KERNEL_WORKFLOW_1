@@ -8,6 +8,8 @@ import {
   FaTools,
 } from "react-icons/fa";
 
+import "../App.css";
+
 const services = [
   {
     title: "Développement Web's",

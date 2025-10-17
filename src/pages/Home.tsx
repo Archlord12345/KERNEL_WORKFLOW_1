@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import "../App.css";
+
 // Données des fonctionnalités
 const features = [
   { title: "Site/Web/Mobile", description: "Création de sites web et développement des applications mobile et web.", icon: "🌐" },
