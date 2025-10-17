@@ -43,12 +43,12 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="min-h-screen py-20 px-4 bg-[#f9fafb] text-gray-800">
+    <section className="min-h-screen py-20 px-4 bg-[#e8f1fb] text-gray-800">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-gray-900">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center text-blue-700">
           Nos Services
         </h1>
-        <p className="text-lg text-gray-600 text-center mb-14 max-w-2xl mx-auto">
+        <p className="text-lg text-blue-900/80 text-center mb-14 max-w-2xl mx-auto">
           Des solutions complètes pour accompagner votre croissance.
         </p>
 
@@ -56,15 +56,15 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 group"
+              className="bg-white rounded-xl p-6 border border-blue-200 shadow-md hover:shadow-xl transition-all duration-300 group hover:border-blue-500"
             >
-              <div className="text-4xl text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl text-blue-600 mb-4 group-hover:text-blue-700 transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+              <h3 className="text-xl font-semibold mb-3 text-blue-800 group-hover:text-blue-700 transition-colors duration-300">
                 {service.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">{service.description}</p>
+              <p className="text-blue-900/80">{service.description}</p>
             </div>
           ))}
         </div>
