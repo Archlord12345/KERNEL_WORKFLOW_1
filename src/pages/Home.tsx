@@ -47,20 +47,10 @@ const Home: React.FC = () => {
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-            Bienvenue chez KERNEL FORGE
+           KERNEL FORGE
           </h1>
-          <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Transformons vos idées en réalité avec des solutions open source innovantes et créatives.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 shadow-lg">
-              Commencer
-              <Sparkles className="w-5 h-5 group-hover:animate-spin" />
-            </button>
-            <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 rounded-xl hover:bg-blue-500 hover:text-white transition-all duration-300">
-              En savoir plus
-            </button>
-          </div>
+          
+        
         </div>
       </section>
 
