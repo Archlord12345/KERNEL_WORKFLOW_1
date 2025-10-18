@@ -5,7 +5,12 @@ import logo from "../../images/logo_sans-fond.png";
 const Home: React.FC = () => {
   const services = [
     {
-      title: "Nos services administrations",
+      title: "Nos services",
+      desc: "Gestion, automatisation et supervision des infrastructures Linux et open source.",
+      icon: <Server className="w-10 h-10 text-blue-500" />,
+    },
+     {
+      title: "Administrations",
       desc: "Gestion, automatisation et supervision des infrastructures Linux et open source.",
       icon: <Server className="w-10 h-10 text-blue-500" />,
     },
